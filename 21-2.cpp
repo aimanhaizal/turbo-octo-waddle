@@ -31,6 +31,8 @@ class Map {
             }
         }   
 };
+// next to do; make the map spawn items, make the items randomized
+
 
 void Mars::init()
 {
