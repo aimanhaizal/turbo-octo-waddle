@@ -27,7 +27,7 @@ class Map {
         void Map::fillMap(){            // this one just fills the map with the number 0
             for (int i=0; i<dimX; i++){
                 for(int j=0; j<dimY;j++){
-                    map[i][j] = 0;
+                    map[i][j] = 0; // new comment!
                 }
             }
         }   
