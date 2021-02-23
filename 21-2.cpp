@@ -17,15 +17,19 @@ class Map {
             dimY = y;
             setSize(dimX,dimY);
         }
-        void setSize(int x,int y){
+        void setSize(int x,int y){      // this one assigns the map to sizes x by y
             map.resize(y);
             for(int i=0;i<y;i++){
                 map[i].resize(x);
-                //cout << "My name jeff "<< endl;
-                //cout << "Its workin" << endl;
-                //cout << "This ia a chnage!" << endl;
             }
         }
+        void Map::fillMap(){            // this one just fills the map with the number 0
+            for (int i=0; i<dimX; i++){
+                for(int j=0; j<dimY;j++){
+                    map[i][j] = 0;
+                }
+            }
+        }   
 };
 
 void Mars::init()
