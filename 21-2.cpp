@@ -17,6 +17,7 @@ class Map {
             dimY = y;
             setSize(dimX,dimY);
         }
+        void replace(int x, int y, int newitem){map[x][y]=newitem;}
         void setSize(int x,int y){      // this one assigns the map to sizes x by y
             map.resize(y);
             for(int i=0;i<y;i++){
@@ -30,6 +31,17 @@ class Map {
                 }
             }
         }   
+        void start(Map& call){                                  // trying to push map with 111111
+            int objects[] = {1 , 1 , 1, 1, 1, 1, 1, 1, 1};
+            int amount = 10;
+
+            for (int i=0;i<dimY();i++){             // problem calling
+                for(int j=0;j<dimX();j++){          // problem calling
+                    int newObj = rand()% amount;
+                    ref.replace(j,i,objects[amount]);
+                }
+            }
+        }
 };
 // next to do; make the map spawn items, make the items randomized
 
