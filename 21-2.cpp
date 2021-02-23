@@ -22,7 +22,8 @@ class Map {
             for(int i=0;i<y;i++){
                 map[i].resize(x);
                 //cout << "My name jeff "<< endl;
-                cout << "Its workin" << endl;
+                //cout << "Its workin" << endl;
+                //cout << "This ia a chnage!" << endl;
             }
         }
 };
