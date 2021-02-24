@@ -31,20 +31,20 @@ class Map {
                 }
             }
         }   
-        void start(Map& call){                                  // trying to push map with 111111
-            int objects[] = {1 , 1 , 1, 1, 1, 1, 1, 1, 1};
-            int amount = 10;
-
-            for (int i=0;i<dimY();i++){             // problem calling
-                for(int j=0;j<dimX();j++){          // problem calling
-                    int newObj = rand()% amount;
-                    ref.replace(j,i,objects[amount]);
-                }
-            }
-        }
 };
 // next to do; make the map spawn items, make the items randomized
 
+void start(Map& call){                                  // trying to push map with 111111
+    int objects[] = {1 , 1 , 1, 1, 1, 1, 1, 1, 1};
+    int amount = 10;
+
+    for (int i=0;i<call.dimY();i++){             // problem calling
+        for(int j=0;j<call.dimX();j++){          // problem calling
+            int newObj = rand()% amount;
+            call.replace(j,i,objects[amount]);
+        }
+    }
+}
 
 void Mars::init()
 {
@@ -74,7 +74,14 @@ void Mars::init()
 
 
 int main(){
-    Map a(2,3);
+
+    cout << "Let's explore Mars......" << endl;
+    int x,y;
+    cout << "Mars dimension X => " << endl;
+    cin >> x;
+    cout << "Mars dimension Y => " << endl;
+    cin >> y;
+    Map a(x,y);
     //a.setSize(2,3);
     return 0;
 }
