@@ -46,32 +46,73 @@ class Map {
 // next to do; make the map spawn items, make the items randomized
 
 
-void Mars::init()
-{
+void Mars::init(){
     char objects[] = {' ', ' ', ' ', ' ', ' ', ' ',
-    'X', '#', '@', '$' };
-    int noOfObjects = 10;	//number of objects in the objects array
+        'X', '#', '@', '$' };
+    int noOfObjects = 10; //number of objects in the objects array
 
     dimX = 15;
     dimY = 5;
 
-    //create dynamic 2D array using vector 
-    map.resize(dimY);	//create rows 
-    for (int i=0; i<dimY; ++i)
-    {
-    map[i].resize(dimX);	//resize each rows
+    //create dynamic 2D array using vector
+    map.resize(dimY); //create rows
+    for (int i=0; i<dimY; ++i){
+        map[i].resize(dimX); //resize each rows
     }
-
-    //put random chars into the vector array 
-    for (int i=0; i<dimY; ++i)
-    {
-    for (int j=0; j<dimX; ++j)
-        {
-        int objNo = rand() % noOfObjects; map[i][j] =	objects[ objNo ];
+    //put random chars into the vector array
+    for (int i=0; i<dimY; ++i){
+        for (int j=0; j<dimX; ++j){
+            int objNo = rand() % noOfObjects;
+            map[i][j] = objects[ objNo ];
         }
     }
 }
 
+void Mars::display(){
+    system("cls");
+    cout << " --__--__--__--__--__--__--__--_" << endl;
+    cout << " = Curiosity, welcome to Mars! =" << endl;
+    cout << " __--__--__--__--__--__--__--__-" << endl;
+    for (int i=0; i<dimY; ++i){
+        cout << " ";
+        for (int j=0; j<dimX; ++j){
+            cout << "+-";
+        }
+        cout << "+" << endl;
+        cout << setw(2) << (dimY-i);
+        for (int j=0; j<dimX; ++j){
+            cout << "|" << map[i][j];
+        }
+        cout << "|" << endl;
+    }
+
+    cout << " ";
+    for (int j=0; j<dimX; ++j) {
+        cout << "+-";
+    }
+    cout << "+" << endl;
+    cout << " ";
+    for (int j=0; j<dimX; ++j){
+        int digit = (j+1)/10;
+        cout << " ";
+        if (digit==0)
+            cout << " ";
+        else
+            cout << digit;
+    }
+    cout << endl;
+
+    cout << " ";
+    for (int j=0; j<dimX; ++j){
+        cout << " " << (j+1)%10;
+    }
+    cout << endl << endl;
+}
+
+void test1(){
+    Mars mars;
+    mars.display();
+}
 
 int main(){
     Map a(2,3);
