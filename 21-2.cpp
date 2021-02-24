@@ -126,6 +126,7 @@ int main(){
     cin >> x;
     cout << "Mars dimension Y => " << endl;
     cin >> y;
+    //newest thing
     Map a(x,y);
     //a.setSize(2,3);
     
