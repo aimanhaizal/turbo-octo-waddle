@@ -114,6 +114,10 @@ void test1(){
     mars.display();
 }
 
+//---------------------------------------------------------------
+int Mars::getDimX(){return dimX;}
+int Mars::getDimY(){return dimY;}
+
 int main(){
     Map a(2,3);
     //a.setSize(2,3);
