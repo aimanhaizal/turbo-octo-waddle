@@ -121,5 +121,12 @@ int Mars::getDimY(){return dimY;}
 int main(){
     Map a(2,3);
     //a.setSize(2,3);
+    
+    srand( time(NULL) );
+    //srand( 1 );
+
+
+    test1();
+    test2();
     return 0;
 }
