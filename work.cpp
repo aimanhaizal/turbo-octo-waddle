@@ -107,7 +107,7 @@ void test2()
 //---------------------------------------------------------------
 char Mars::getObject(int x, int y){
     if(y == 1){y = 4;}
-    else if(y == 2){y = 3;}
+    else if(y == 2){y = 3;} // same, dimY - Y type map
     else if(y == 3){y = 2;}
     else if(y == 4){y = 1;}
     else if(y == 5){y = 0;}
@@ -140,7 +140,7 @@ void test3()
 //---------------------------------------------------------------
 void Mars::setObject(int x, int y, char z){
     if(y == 1){y = 4;}
-    else if(y == 2){y = 3;}
+    else if(y == 2){y = 3;} // makes a dimY - y type map
     else if(y == 3){y = 2;}
     else if(y == 4){y = 1;}
     else if(y == 5){y = 0;}
@@ -457,7 +457,7 @@ int main()
 //  need to add collision to the rover with items that spawn      // step 3 done
 //  theres 3 things, hill(X), gold($) and Trap(#). Fix the signs. // step 4 done
 //  collecting gold is done                                       // step 5 done
-//  makes so that if you hit a trap you can recurse the map so that it doesnt immediately ends
+//  makes so that if you hit a trap you can replay the map so that it doesnt immediately ends
 //  fix the spawn since you can spawn inside items(Is probably fine?)
 //  fix the user interface (score and such)
 //  add fog to the map
