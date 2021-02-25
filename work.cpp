@@ -283,21 +283,47 @@ void Rover::turnRight(Mars& mars){
 
 void Rover::move(Mars& mars){
     mars.setObject(x,y,' ');
-    if(heading == '>' && x+1 < mars.getDimX()){
-        mars.setObject(x+1,y,heading);
-        x++;
+    // add collision here?
+    //in python its : if board[playerY - 1][playerX] != "=" and board[playerY - 1][playerX] != "|":
+
+    if(heading == '>' && x+1 <= mars.getDimX()){
+        //newcode
+        if(mars.getObject(x+1,y) == '#' || mars.getObject(x+1,y) == '@' || mars.getObject(x+1,y) == 'X'){
+            mars.setObject(x,y,heading);
+        }else{
+            x++;    
+            mars.setObject(x,y,heading);
+        }
     }
     else if(heading == 'v' && y-1 > 0){ 
-        mars.setObject(x,y-1,heading);
-        y--;
+        if(mars.getObject(x,y-1) == '#' || mars.getObject(x,y-1) == '@' || mars.getObject(x,y-1) == 'X'){
+            mars.setObject(x,y,heading);
+        }else{
+            y--;    
+            mars.setObject(x,y,heading);
+        }
+        // mars.setObject(x,y-1,heading);
+        // y--;
     }
     else if(heading == '<'&& x-1 > 0){
-        mars.setObject(x-1,y,heading);
-        x--;
+        if(mars.getObject(x-1,y) == '#' || mars.getObject(x-1,y) == '@' || mars.getObject(x-1,y) == 'X'){
+            mars.setObject(x,y,heading);
+        }else{
+            x--;    
+            mars.setObject(x,y,heading);
+        }
+        // mars.setObject(x-1,y,heading);
+        // x--;
     }
-    else if(heading == '^'&& y+1 < mars.getDimY()){ 
-        mars.setObject(x,y+1,heading);
-        y++;
+    else if(heading == '^'&& y+1 <= mars.getDimY()){ 
+        if(mars.getObject(x,y+1) == '#' || mars.getObject(x,y+1) == '@' || mars.getObject(x,y+1) == 'X'){
+            mars.setObject(x,y,heading);
+        }else{
+            y++;    
+            mars.setObject(x,y,heading);
+        }
+        // mars.setObject(x,y+1,heading);
+        // y++;
     }
     else
         mars.setObject(x,y,heading);
@@ -382,6 +408,7 @@ int main()
 //  put the randomized map from test 1 into test 7 // step 1 done
 //  expand its movement to accept character lines // step 2 done
 //  fix the spawn since you can spawn inside items
-//  need to add collision to the rover with items that spawn
+//  need to add collision to the rover with items that spawn // step 3 done
+//  need to fix collsion so that it ends the game if you step on a mine (whatst he sign?)
 //  fix the user interface (score and such)
 //  add fog to the map
