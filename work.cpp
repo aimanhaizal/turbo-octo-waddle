@@ -382,7 +382,6 @@ int main()
 //  put the randomized map from test 1 into test 7 // step 1 done
 //  expand its movement to accept character lines // step 2 done
 //  fix the spawn since you can spawn inside items
-//  need to add collision to the rover with items that spawn -- tomorrow
+//  need to add collision to the rover with items that spawn
 //  fix the user interface (score and such)
 //  add fog to the map
-// newest code?
