@@ -221,6 +221,7 @@ class Rover{
         char heading;
 
     public:
+        enum direction{Unknown = -1, Left = 0, Up = 1, Right = 2, Down = 3};
         Rover(){}
         void land(Mars& mars);
         void turnLeft(Mars& mars);
