@@ -47,6 +47,31 @@ void Mars::init(){
         }
     }
 }
+
+/////// UPDATED MAP GENERATION ///////
+/*class Map{
+    private:
+        int row;
+        int column;
+        int hill;
+        int gold;
+        int trap;
+        vector < vector<char> > map;
+    public:
+        Map(int x, int y, int z); 
+};
+    
+    
+Map::Map(int x, int y, int z){
+    column = x;                 
+    row = y;                    
+    gold = z;                   
+    hill = column * row / 8;    
+    trap = column * row / 8;   
+    resizeMap(map, column * 2 + 1, row * 2 + 1); 
+}*/
+
+/////////////////////////////////////////
         
 void Mars::display(){
     system("cls");
