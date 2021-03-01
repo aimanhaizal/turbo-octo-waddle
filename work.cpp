@@ -71,6 +71,9 @@ Map::Map(int x, int y, int z){
     resizeMap(map, column * 2 + 1, row * 2 + 1); 
 }*/
 
+//ltr i'll use boolean to add the fog
+
+
 /////////////////////////////////////////
         
 void Mars::display(){
